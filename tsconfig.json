@@ -16,11 +16,12 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "jsxImportSource": "preact",
-    "baseUrl": "src",
+    "baseUrl": "./",
     "types": ["vite/client"],
     "paths": {
       "react": ["../node_modules/preact/compat/"],
-      "react-dom": ["../node_modules/preact/compat/"]
+      "react-dom": ["../node_modules/preact/compat/"],
+      "*": ["*", "*/index"]
     }
   },
   "include": ["src"]
