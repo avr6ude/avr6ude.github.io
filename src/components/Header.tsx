@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <div className="flex flex-col justify-center p-10 bg-secondary w-full">
       <LandingDate />
-      <h1 className="text-center text-10xl font-secondary">FUTURIST</h1>
+      <h1 className="text-center text-10xl font-secondary">TEST</h1>
       <div className="flex justify-center p-5">
         <p className="text-center max-w-lg font-primary uppercase text-xl">
           Welcome to the digital home of a modern day Da Vinci of code. Cracking
