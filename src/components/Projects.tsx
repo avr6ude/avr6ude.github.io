@@ -14,6 +14,7 @@ export default function Projects() {
       <p className="font-secondary text-white text-start text-3xl uppercase">
         My Projects:
       </p>
+      <Spacer horizontal />
       <ImageBlock />
     </div>
   )
