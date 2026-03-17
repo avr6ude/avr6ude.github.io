@@ -18,7 +18,7 @@
 
 <style>
   .nav {
-    padding: var(--space-lg) var(--space-xl);
+    padding: var(--space-md) var(--space-xl);
     border-bottom: 1px solid var(--color-border);
   }
   .nav-inner {
@@ -27,6 +27,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-sm) var(--space-lg);
   }
   .nav-brand {
     display: flex;
@@ -36,6 +38,7 @@
     font-family: var(--font-mono);
     font-size: 0.9rem;
     font-weight: 500;
+    flex-shrink: 0;
   }
   .nav-brand:hover {
     text-decoration: none;
@@ -49,7 +52,7 @@
   }
   .nav-links {
     display: flex;
-    gap: var(--space-lg);
+    gap: var(--space-md);
     font-size: 0.85rem;
   }
   .nav-links a {
@@ -59,6 +62,15 @@
   .nav-links a:hover {
     color: var(--color-accent);
     text-decoration: none;
+  }
+  @media (max-width: 480px) {
+    .nav {
+      padding: var(--space-md);
+    }
+    .nav-links {
+      gap: var(--space-sm);
+      font-size: 0.8rem;
+    }
   }
   @keyframes pulse {
     0%,
