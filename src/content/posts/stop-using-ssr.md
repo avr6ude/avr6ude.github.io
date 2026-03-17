@@ -1,6 +1,6 @@
 ---
 title: "we should stop using ssr"
-date: 2025-03-17
+date: 2026-03-16
 tags: ["ssr", "nextjs", "webdev"]
 excerpt: "the ecosystem keeps pushing SSR as the default for everything. i got tired of it."
 til: false

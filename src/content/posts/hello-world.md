@@ -1,6 +1,6 @@
 ---
 title: "PSA"
-date: 2026-03-17
+date: 2026-03-15
 tags: ["meta"]
 excerpt: "Hi. Fair warning - a mass-hallucinating language model helped build this site."
 ---

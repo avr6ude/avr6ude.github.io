@@ -1,15 +1,26 @@
 ---
-import Base from "../layouts/Base.astro";
-import Card from "../components/ui/Card.astro";
 import Badge from "../components/ui/Badge.astro";
+import Card from "../components/ui/Card.astro";
 import Divider from "../components/ui/Divider.astro";
+import Base from "../layouts/Base.astro";
 
 const projects = [
   {
+    name: "Game of Slop",
+    description: "Conway's Game of Life but every cell is AI-generated slop. Eight species with a predator-prey food chain fight for internet dominance. Windows 98 UI, boot sequence, CRT scanlines, scrolling news ticker.",
+    tags: ["react", "typescript", "gamedev", "ai"],
+    links: [
+      { label: "Play", url: "https://slop.avrdu.de" },
+      { label: "GitHub", url: "https://github.com/avr6ude/gameofslop" },
+    ],
+  },
+  {
     name: "avrdu.de",
-    description: "This site. Static blog built with Astro, deployed on Cloudflare Pages. Zero client JS, amber-on-black theme, partially assembled by a hallucinating language model.",
+    description: "This place. Static blog built with Astro, deployed on Cloudflare. Zero client JS, flashy theme, partially assembled by a hallucinating language model.",
     tags: ["astro", "cloudflare"],
-    url: "https://github.com/avr6ude/avrdu.de",
+    links: [
+      { label: "GitHub", url: "https://github.com/avr6ude/avrdu.de" },
+    ],
   },
 ];
 ---
@@ -23,15 +34,20 @@ const projects = [
 
     <div class="project-list">
       {projects.map((project) => (
-        <a href={project.url} class="project-link" target="_blank" rel="noopener">
-          <Card class="project-card">
-            <h2 class="project-name">{project.name}</h2>
-            <p class="project-desc">{project.description}</p>
+        <Card class="project-card">
+          <h2 class="project-name">{project.name}</h2>
+          <p class="project-desc">{project.description}</p>
+          <div class="project-meta">
             <div class="project-tags">
               {project.tags.map((tag) => <Badge variant="tag">{tag}</Badge>)}
             </div>
-          </Card>
-        </a>
+            <div class="project-links">
+              {project.links.map((link) => (
+                <a href={link.url} class="project-link" target="_blank" rel="noopener">{link.label} &rarr;</a>
+              ))}
+            </div>
+          </div>
+        </Card>
       ))}
     </div>
   </div>
@@ -58,16 +74,25 @@ const projects = [
     flex-direction: column;
     gap: var(--space-md);
   }
+  .project-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+  .project-links {
+    display: flex;
+    gap: var(--space-md);
+  }
   .project-link {
-    display: block;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
     text-decoration: none;
-    color: inherit;
+    transition: color 0.15s;
   }
   .project-link:hover {
-    text-decoration: none;
-  }
-  .project-link:hover :global(.card) {
-    border-color: var(--color-text-muted);
+    color: var(--color-text);
   }
   .project-name {
     font-family: var(--font-serif);
