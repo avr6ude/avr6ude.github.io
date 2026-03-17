@@ -10,7 +10,7 @@ interface Props {
 
 const { title, description = "Personal blog and projects" } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const ogImage = new URL("/og.svg", Astro.site);
+const ogImage = new URL("/og.png", Astro.site);
 ---
 
 <!doctype html>
