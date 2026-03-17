@@ -1,14 +1,14 @@
 ---
 import { getCollection } from "astro:content";
-import Base from "../layouts/Base.astro";
-import PostCard from "../components/ui/PostCard.astro";
 import Badge from "../components/ui/Badge.astro";
-import StatRow from "../components/ui/StatRow.astro";
 import Divider from "../components/ui/Divider.astro";
+import PostCard from "../components/ui/PostCard.astro";
+import StatRow from "../components/ui/StatRow.astro";
+import Base from "../layouts/Base.astro";
 import { readTime } from "../lib/utils";
 
 const posts = (await getCollection("posts")).sort(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+  (a, b) => a.data.date.valueOf() - b.data.date.valueOf(),
 );
 
 const tilCount = posts.filter((p) => p.data.til).length;
@@ -30,7 +30,7 @@ const recentPosts = posts.slice(0, 3);
     <div class="hero-content">
       <h1 class="hero-title"><em>Building things for the web.</em></h1>
       <p class="hero-bio">
-        Developer, tinkerer, occasional writer. I build tools and share what I
+        Developer, tinkerer, occasional writer, lazy bum, hater. I build stuff and share what I
         learn along the way.
       </p>
       <div class="hero-tags">
