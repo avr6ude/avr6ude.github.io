@@ -14,8 +14,6 @@ each one has its own survival rules, and they eat each other in a food chain. SE
 
 it looks like windows 98 because the internet peaked in 1998 and it's been downhill ever since.
 
-![game of slop screenshot](/images/gameofslop.webp)
-
 ---
 
 ## the rules
