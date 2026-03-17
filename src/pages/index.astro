@@ -1,0 +1,218 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../layouts/Base.astro";
+import PostCard from "../components/ui/PostCard.astro";
+import Badge from "../components/ui/Badge.astro";
+import StatRow from "../components/ui/StatRow.astro";
+import Divider from "../components/ui/Divider.astro";
+import { readTime } from "../lib/utils";
+
+const posts = (await getCollection("posts")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+const tilCount = posts.filter((p) => p.data.til).length;
+const totalWords = posts.reduce(
+  (sum, p) => sum + (p.body?.split(/\s+/).length ?? 0),
+  0,
+);
+const allTags = posts.flatMap((p) => p.data.tags);
+const tagCounts = allTags.reduce<Record<string, number>>((acc, tag) => {
+  acc[tag] = (acc[tag] || 0) + 1;
+  return acc;
+}, {});
+const recentPosts = posts.slice(0, 3);
+---
+
+<Base title="avrdu.de">
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+      <h1 class="hero-title"><em>Building things for the web.</em></h1>
+      <p class="hero-bio">
+        Developer, tinkerer, occasional writer. I build tools and share what I
+        learn along the way.
+      </p>
+      <div class="hero-tags">
+        {Object.keys(tagCounts).map((tag) => <Badge variant="tag">{tag}</Badge>)}
+      </div>
+    </div>
+  </section>
+
+  <Divider />
+
+  <section class="main-grid" id="posts">
+    <div class="post-list">
+      <h2 class="section-title">Posts</h2>
+      {
+        posts.map((post) => (
+          <PostCard
+            title={post.data.title}
+            date={post.data.date}
+            excerpt={post.data.excerpt}
+            tags={post.data.tags}
+            readTime={readTime(post.body ?? "")}
+            slug={post.id}
+            til={post.data.til}
+          />
+        ))
+      }
+    </div>
+
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <h3 class="sidebar-title">Stats</h3>
+        <StatRow label="posts" value={posts.length} />
+        <StatRow label="TILs" value={tilCount} />
+        <StatRow label="words" value={totalWords.toLocaleString()} />
+      </div>
+
+      <div class="sidebar-section">
+        <h3 class="sidebar-title">Topics</h3>
+        <div class="sidebar-tags">
+          {
+            Object.entries(tagCounts)
+              .sort((a, b) => b[1] - a[1])
+              .map(([tag, count]) => (
+                <span class="sidebar-tag">
+                  <Badge variant="tag">{tag}</Badge>
+                  <span class="sidebar-tag-count">{count}</span>
+                </span>
+              ))
+          }
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3 class="sidebar-title">Recent</h3>
+        <ul class="recent-list">
+          {
+            recentPosts.map((post) => (
+              <li>
+                <a href={`/posts/${post.slug}/`}>{post.data.title}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </aside>
+  </section>
+</Base>
+
+<style>
+  .hero {
+    position: relative;
+    padding: var(--space-3xl) var(--space-xl);
+    overflow: hidden;
+  }
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--color-border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+    background-size: 4rem 4rem;
+    opacity: 0.3;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+    -webkit-mask-image: radial-gradient(
+      ellipse at center,
+      black 30%,
+      transparent 70%
+    );
+  }
+  .hero-content {
+    position: relative;
+    max-width: 72rem;
+    margin: 0 auto;
+  }
+  .hero-title {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: var(--space-md);
+    color: var(--color-text);
+  }
+  .hero-bio {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+    max-width: 40ch;
+  }
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+  }
+  .main-grid {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: var(--space-xl);
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: var(--space-2xl);
+  }
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: var(--space-lg);
+    color: var(--color-text);
+  }
+  .post-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+  .sidebar-title {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+  }
+  .sidebar-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+  }
+  .sidebar-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25em;
+  }
+  .sidebar-tag-count {
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+  }
+  .recent-list {
+    list-style: none;
+    padding: 0;
+  }
+  .recent-list li {
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.85rem;
+  }
+  .recent-list a {
+    color: var(--color-text);
+  }
+  .recent-list a:hover {
+    color: var(--color-accent);
+  }
+  @media (max-width: 768px) {
+    .main-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-title {
+      font-size: 1.75rem;
+    }
+  }
+</style>

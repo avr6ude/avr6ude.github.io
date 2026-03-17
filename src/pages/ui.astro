@@ -1,0 +1,185 @@
+---
+import Base from "../layouts/Base.astro";
+import Button from "../components/ui/Button.astro";
+import Badge from "../components/ui/Badge.astro";
+import Card from "../components/ui/Card.astro";
+import PostCard from "../components/ui/PostCard.astro";
+import Divider from "../components/ui/Divider.astro";
+import CodeBlock from "../components/ui/CodeBlock.astro";
+import Prose from "../components/ui/Prose.astro";
+import TagList from "../components/ui/TagList.astro";
+import StatRow from "../components/ui/StatRow.astro";
+---
+
+<Base title="UI Components — avrdu.de">
+  <div class="ui-page">
+    <h1 class="ui-heading">Component Library</h1>
+    <p class="ui-desc">
+      Internal UI kit &mdash; all .astro components, zero client JS.
+    </p>
+
+    <section class="ui-section">
+      <h2>Button</h2>
+      <div class="ui-row">
+        <Button>Default</Button>
+        <Button variant="amber">Amber</Button>
+        <Button variant="ghost">Ghost</Button>
+      </div>
+      <div class="ui-row">
+        <Button href="#">Link Default</Button>
+        <Button variant="amber" href="#">Link Amber</Button>
+        <Button variant="ghost" href="#">Link Ghost</Button>
+      </div>
+    </section>
+
+    <Divider />
+
+    <section class="ui-section">
+      <h2>Badge</h2>
+      <div class="ui-row">
+        <Badge variant="til">TIL</Badge>
+        <Badge variant="tag">css</Badge>
+        <Badge variant="tag">astro</Badge>
+        <Badge variant="tag">cloudflare</Badge>
+      </div>
+    </section>
+
+    <Divider />
+
+    <section class="ui-section">
+      <h2>TagList</h2>
+      <TagList tags={["astro", "typescript", "cloudflare", "css"]} />
+    </section>
+
+    <Divider />
+
+    <section class="ui-section">
+      <h2>Card</h2>
+      <Card>
+        <p>A base card wrapper. Used by PostCard, ProjectCard, etc.</p>
+      </Card>
+    </section>
+
+    <Divider />
+
+    <section class="ui-section">
+      <h2>PostCard</h2>
+      <div class="ui-stack">
+        <PostCard
+          title="Hello, World"
+          date={new Date("2026-03-17")}
+          excerpt="First post on the new site. Built with Astro, deployed on Cloudflare Pages."
+          tags={["meta"]}
+          readTime="1 min read"
+          slug="hello-world"
+        />
+        <PostCard
+          title="TIL: CSS Container Queries"
+          date={new Date("2026-03-16")}
+          excerpt="Container queries let you style elements based on the size of their container."
+          tags={["css", "frontend"]}
+          readTime="2 min read"
+          slug="til-css-container-queries"
+          til={true}
+        />
+      </div>
+    </section>
+
+    <Divider />
+
+    <section class="ui-section">
+      <h2>StatRow</h2>
+      <div class="ui-stat-demo">
+        <StatRow label="posts" value="12" />
+        <StatRow label="TILs" value="5" />
+        <StatRow label="words" value="8,420" />
+      </div>
+    </section>
+
+    <Divider />
+
+    <section class="ui-section">
+      <h2>CodeBlock</h2>
+      <CodeBlock
+        code={`const greet = (name: string) => {\n  console.log(\`hello, \${name}\`);\n};`}
+        lang="typescript"
+      />
+    </section>
+
+    <Divider />
+
+    <section class="ui-section">
+      <h2>Prose</h2>
+      <Prose>
+        <h3>Heading Three</h3>
+        <p>
+          Regular paragraph text with <strong>bold</strong> and <a href="#"
+            >links</a
+          >. Inline <code>code</code> looks like this.
+        </p>
+        <blockquote>
+          <p>Blockquotes are styled with an amber left border.</p>
+        </blockquote>
+        <ul>
+          <li>Unordered list item one</li>
+          <li>Unordered list item two</li>
+        </ul>
+      </Prose>
+    </section>
+
+    <Divider />
+
+    <section class="ui-section">
+      <h2>Divider</h2>
+      <p class="ui-note">
+        &uarr; You've been seeing them between each section.
+      </p>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .ui-page {
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: var(--space-2xl) var(--space-xl);
+  }
+  .ui-heading {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: var(--space-sm);
+  }
+  .ui-desc {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-2xl);
+  }
+  .ui-section h2 {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-accent);
+    margin-bottom: var(--space-md);
+  }
+  .ui-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+  }
+  .ui-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+  .ui-stat-demo {
+    max-width: 280px;
+  }
+  .ui-note {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+</style>

@@ -1,0 +1,33 @@
+---
+interface Props {
+  variant?: "til" | "tag";
+  class?: string;
+}
+
+const { variant = "tag", class: className } = Astro.props;
+---
+
+<span class:list={["badge", `badge--${variant}`, className]}>
+  <slot />
+</span>
+
+<style>
+  .badge {
+    display: inline-block;
+    padding: 0.15em 0.5em;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    border-radius: var(--radius);
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+  .badge--til {
+    background: var(--color-accent-dim);
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+  .badge--tag {
+    background: rgba(122, 119, 109, 0.15);
+    color: var(--color-text-muted);
+  }
+</style>

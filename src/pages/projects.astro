@@ -1,0 +1,89 @@
+---
+import Base from "../layouts/Base.astro";
+import Card from "../components/ui/Card.astro";
+import Badge from "../components/ui/Badge.astro";
+import Divider from "../components/ui/Divider.astro";
+
+const projects = [
+  {
+    name: "avrdu.de",
+    description: "This site. Static blog built with Astro, deployed on Cloudflare Pages. Zero client JS, amber-on-black theme, partially assembled by a hallucinating language model.",
+    tags: ["astro", "cloudflare"],
+    url: "https://github.com/avr6ude/avrdu.de",
+  },
+];
+---
+
+<Base title="Projects — avrdu.de">
+  <div class="projects-page">
+    <h1 class="page-title">Projects</h1>
+    <p class="page-desc">Things I've built or am building.</p>
+
+    <Divider />
+
+    <div class="project-list">
+      {projects.map((project) => (
+        <a href={project.url} class="project-link" target="_blank" rel="noopener">
+          <Card class="project-card">
+            <h2 class="project-name">{project.name}</h2>
+            <p class="project-desc">{project.description}</p>
+            <div class="project-tags">
+              {project.tags.map((tag) => <Badge variant="tag">{tag}</Badge>)}
+            </div>
+          </Card>
+        </a>
+      ))}
+    </div>
+  </div>
+</Base>
+
+<style>
+  .projects-page {
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: var(--space-3xl) var(--space-xl);
+  }
+  .page-title {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: var(--space-sm);
+  }
+  .page-desc {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+  }
+  .project-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+  .project-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+  .project-link:hover {
+    text-decoration: none;
+  }
+  .project-link:hover :global(.card) {
+    border-color: var(--color-text-muted);
+  }
+  .project-name {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: var(--space-xs);
+  }
+  .project-desc {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    margin-bottom: var(--space-md);
+  }
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+  }
+</style>
