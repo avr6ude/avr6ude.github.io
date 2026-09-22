@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>avrdu.de</title>
+    <link>https://avrdu.de/</link>
+    <description>Personal blog and projects</description>
+    <language>en</language>
+    <item>
+      <title>casky: batch cask installer for homebrew because every other package manager has one</title>
+      <link>https://avrdu.de/posts/casky/</link>
+      <guid>https://avrdu.de/posts/casky/</guid>
+      <pubDate>Wed, 13 May 2026 00:00:00 GMT</pubDate>
+      <description>winget has winstall. chocolatey has chocolatey.org. apt has tasksel. aur has meta-packages. homebrew cask had macapps.link, and then it died</description>
+    </item>
+    <item>
+      <title>someone popped my cloudflare and used a worker to inject malware on a site under my domain for 22 hours</title>
+      <link>https://avrdu.de/posts/clearfake-cloudflare-worker/</link>
+      <guid>https://avrdu.de/posts/clearfake-cloudflare-worker/</guid>
+      <pubDate>Sun, 26 Apr 2026 00:00:00 GMT</pubDate>
+      <description>a friend&apos;s mini-app, hosted on a subdomain of mine. a user reported a fake captcha telling them to paste a rundll32 command. the source repo was clean. the origin was clean. the cloudflare-proxied response wasn&apos;t.</description>
+    </item>
+    <item>
+      <title>i made conway&apos;s game of life but every cell is AI slop</title>
+      <link>https://avrdu.de/posts/game-of-slop/</link>
+      <guid>https://avrdu.de/posts/game-of-slop/</guid>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 GMT</pubDate>
+      <description>a cellular automaton where AI art, ChatGPT essays, deepfakes, and SEO spam fight for internet dominance. windows 98 UI because why not.</description>
+    </item>
+    <item>
+      <title>we should stop using ssr</title>
+      <link>https://avrdu.de/posts/stop-using-ssr/</link>
+      <guid>https://avrdu.de/posts/stop-using-ssr/</guid>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 GMT</pubDate>
+      <description>the ecosystem keeps pushing SSR as the default for everything. i got tired of it.</description>
+    </item>
+    <item>
+      <title>PSA</title>
+      <link>https://avrdu.de/posts/hello-world/</link>
+      <guid>https://avrdu.de/posts/hello-world/</guid>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 GMT</pubDate>
+      <description>Hi. Fair warning - a mass-hallucinating language model helped build this site.</description>
+    </item>
+  </channel>
+</rss>
