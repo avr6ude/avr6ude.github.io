@@ -4,14 +4,26 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview"
+    "dev": "nuxt dev",
+    "prebuild": "node scripts/generate-feeds.mjs",
+    "build": "nuxt generate",
+    "pregenerate": "node scripts/generate-feeds.mjs",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "typecheck": "nuxt typecheck",
+    "test": "vitest run"
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.17",
-    "@astrojs/sitemap": "^3.7.1",
-    "astro": "^6.0.5"
+    "@neobrut-vue/core": "^0.2.0",
+    "@nuxt/content": "^3.16.0",
+    "better-sqlite3": "^12.5.0",
+    "gray-matter": "^4.0.3",
+    "nuxt": "^4.5.2"
   },
-  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
+  "packageManager": "npm@10.9.2",
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.11",
+    "vue-tsc": "^3.1.1"
+  }
 }

@@ -1,3 +1,6 @@
 {
-  "extends": "astro/tsconfigs/strict"
+  "extends": "./.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "strict": true
+  }
 }

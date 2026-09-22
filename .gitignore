@@ -1,4 +1,7 @@
 node_modules/
 dist/
 .astro/
+.nuxt/
+.output/
+.data/
 .DS_Store
