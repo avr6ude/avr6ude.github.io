@@ -20,6 +20,7 @@ describe('blog helpers', () => {
   it('calculates a minimum one-minute reading time at 200 words per minute', () => {
     expect(readTime('one two three')).toBe('1 min read')
     expect(readTime(Array.from({ length: 401 }, () => 'word').join(' '))).toBe('3 min read')
+    expect(readTime({ type: 'minimark', value: [['p', {}, 'one', 'two', 'three']] })).toBe('1 min read')
   })
 
   it('builds a writing filter link for a tag', () => {

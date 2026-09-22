@@ -19,14 +19,14 @@ useHead(() => ({
   title: `${post.value?.title ?? 'Post'} — avrdu.de`,
   link: [{ rel: 'canonical', href: canonical.value }],
   meta: [
-    { name: 'description', content: post.value?.description ?? 'Personal blog and projects' },
+    { name: 'description', content: post.value?.excerpt ?? 'Personal blog and projects' },
     { property: 'og:title', content: `${post.value?.title ?? 'Post'} — avrdu.de` },
-    { property: 'og:description', content: post.value?.description ?? '' },
+    { property: 'og:description', content: post.value?.excerpt ?? '' },
     { property: 'og:type', content: 'article' },
     { property: 'og:url', content: canonical.value },
     { property: 'og:image', content: 'https://avrdu.de/og.png' },
     { name: 'twitter:title', content: `${post.value?.title ?? 'Post'} — avrdu.de` },
-    { name: 'twitter:description', content: post.value?.description ?? '' },
+    { name: 'twitter:description', content: post.value?.excerpt ?? '' },
     { name: 'twitter:image', content: 'https://avrdu.de/og.png' },
   ],
 }))
@@ -41,8 +41,8 @@ useHead(() => ({
         <span>field note / {{ post.tags[0] }}</span>
       </div>
       <h1>{{ post.title }}</h1>
-      <PostMeta :date="post.date" :tags="post.tags" :read-time="readTime(post.description)" />
-      <p class="post__excerpt">{{ post.description }}</p>
+      <PostMeta :date="post.date" :tags="post.tags" :read-time="readTime(post.body)" />
+      <p class="post__excerpt">{{ post.excerpt }}</p>
     </header>
 
     <NbSeparator />

@@ -8,7 +8,7 @@ defineProps<{
     title: string
     date: string | Date
     tags: string[]
-    description: string
+    excerpt: string
     til?: boolean
     body?: unknown
   }
@@ -19,12 +19,12 @@ defineProps<{
   <NbCard class="post-card" tone="paper" interactive>
     <template #header>
       <div class="post-card__topline">
-        <PostMeta :date="post.date" :tags="[]" :til="post.til" :read-time="readTime(post.description)" />
+        <PostMeta :date="post.date" :tags="[]" :til="post.til" :read-time="readTime(post.body)" />
         <NbBadge v-if="post.til" tone="secondary" size="sm">NOTE</NbBadge>
       </div>
     </template>
     <h3>{{ post.title }}</h3>
-    <p>{{ post.description }}</p>
+    <p>{{ post.excerpt }}</p>
     <template #footer>
       <div class="post-card__footer">
         <div class="post-card__tags" aria-label="Post tags">
