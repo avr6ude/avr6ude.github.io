@@ -29,11 +29,6 @@ useSeoMeta({
         <p class="hero__lede">
           Developer, tinkerer, occasional writer, lazy bum, hater. I build stuff and write down what I learn before it evaporates.
         </p>
-        <div class="hero__chips" aria-label="Topics">
-          <NuxtLink v-for="tag in Object.keys(tagCounts)" :key="tag" :to="tagHref(tag)" class="hero__chip">
-            <NbBadge tone="secondary">#{{ tag }}</NbBadge>
-          </NuxtLink>
-        </div>
       </div>
     </section>
 
@@ -94,12 +89,12 @@ useSeoMeta({
   display: grid;
   grid-template-columns: minmax(0, 44rem);
   align-items: end;
-  min-height: 26rem;
+  min-height: 0;
 }
 
+.hero.page-section { padding: 3rem 0 2.5rem; }
 .hero__copy { position: relative; z-index: 1; }
-.hero__lede { max-width: 42ch; margin: 2rem 0 0; font-size: 1.1rem; line-height: 1.6; }
-.hero__chips { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
+.hero__lede { max-width: 42ch; margin: 1.25rem 0 0; font-size: 1.05rem; line-height: 1.55; }
 .aside-label {
   margin: 0;
   font-family: var(--nb-font-mono);
@@ -109,7 +104,6 @@ useSeoMeta({
   text-transform: uppercase;
 }
 
-.hero__chip,
 .topic-link { text-decoration: none; }
 
 .writing__heading {
@@ -146,9 +140,8 @@ useSeoMeta({
 }
 
 @media (max-width: 560px) {
+  .hero.page-section { padding: 1.75rem 0 1.5rem; }
   .hero__lede { margin-top: 1.25rem; font-size: 0.96rem; line-height: 1.5; }
-  .hero__chips { gap: 0.4rem; margin-top: 1.1rem; }
-  .hero__chips :deep(.nb-badge) { padding: 0.28rem 0.48rem; font-size: 0.68rem; }
   .writing__heading { align-items: start; flex-direction: column; gap: 0.8rem; margin-bottom: 1.75rem; }
   .writing__summary { font-size: 0.92rem; }
   .writing__list { gap: 1rem; }
