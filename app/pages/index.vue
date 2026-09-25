@@ -26,10 +26,10 @@ useSeoMeta({
     <section class="hero page-section">
       <div class="hero__copy">
         <h1 class="display-title">building things for the web.</h1>
-        <p class="hero__lede">
-          Developer, tinkerer, occasional writer, lazy bum, hater. I build stuff and write down what I learn before it evaporates.
-        </p>
       </div>
+      <p class="hero__lede">
+        Developer, tinkerer, occasional writer, lazy bum, hater. I build stuff and write down what I learn before it evaporates.
+      </p>
     </section>
 
     <NbSeparator />
@@ -87,14 +87,16 @@ useSeoMeta({
 .hero {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 44rem);
+  grid-template-columns: minmax(0, 1fr) minmax(14rem, 24rem);
+  gap: clamp(2rem, 7vw, 6rem);
   align-items: end;
   min-height: 0;
 }
 
 .hero.page-section { padding: 3rem 0 2.5rem; }
 .hero__copy { position: relative; z-index: 1; }
-.hero__lede { max-width: 42ch; margin: 1.25rem 0 0; font-size: 1.05rem; line-height: 1.55; }
+.hero .display-title { max-width: 11ch; font-size: clamp(2.75rem, 7vw, 5.5rem); }
+.hero__lede { max-width: 30ch; margin: 0; font-size: 1.05rem; line-height: 1.55; }
 .aside-label {
   margin: 0;
   font-family: var(--nb-font-mono);
@@ -133,7 +135,8 @@ useSeoMeta({
 .topic-list { display: flex; width: 100%; flex-wrap: wrap; justify-content: flex-start; gap: 0.5rem; }
 
 @media (max-width: 800px) {
-  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero { grid-template-columns: 1fr; gap: 1.25rem; min-height: auto; }
+  .hero__lede { max-width: 42ch; }
   .writing__grid { grid-template-columns: 1fr; }
   .writing__aside { position: static; grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .aside-block--topics { grid-column: 1 / -1; }
@@ -141,7 +144,8 @@ useSeoMeta({
 
 @media (max-width: 560px) {
   .hero.page-section { padding: 1.75rem 0 1.5rem; }
-  .hero__lede { margin-top: 1.25rem; font-size: 0.96rem; line-height: 1.5; }
+  .hero .display-title { font-size: clamp(2.35rem, 13vw, 4rem); }
+  .hero__lede { font-size: 0.96rem; line-height: 1.5; }
   .writing__heading { align-items: start; flex-direction: column; gap: 0.8rem; margin-bottom: 1.75rem; }
   .writing__summary { font-size: 0.92rem; }
   .writing__list { gap: 1rem; }
