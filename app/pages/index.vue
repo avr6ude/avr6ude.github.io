@@ -39,9 +39,8 @@ useSeoMeta({
         <div>
           <h2 class="section-title">writing.</h2>
         </div>
-        <div class="writing__summary">
-          <p v-if="!activeTag">Notes from shipping projects, breaking things, and arguing with defaults.</p>
-          <p v-else>Showing {{ visiblePosts.length }} post<span v-if="visiblePosts.length !== 1">s</span> tagged #{{ activeTag }} · <NuxtLink to="/#writing">show all</NuxtLink></p>
+        <div v-if="activeTag" class="writing__summary">
+          <p>Showing {{ visiblePosts.length }} post<span v-if="visiblePosts.length !== 1">s</span> tagged #{{ activeTag }} · <NuxtLink to="/#writing">show all</NuxtLink></p>
         </div>
       </div>
 
