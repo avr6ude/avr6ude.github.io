@@ -96,7 +96,7 @@ useSeoMeta({
 .hero.page-section { padding: 3rem 0 2.5rem; }
 .hero__copy { position: relative; z-index: 1; }
 .hero .display-title { max-width: 11ch; font-size: clamp(2.75rem, 7vw, 5.5rem); }
-.hero__lede { max-width: 30ch; margin: 0; font-size: 1.05rem; line-height: 1.55; }
+.hero__lede { align-self: center; max-width: 30ch; margin: 0; font-size: 1.05rem; line-height: 1.55; }
 .aside-label {
   margin: 0;
   font-family: var(--nb-font-mono);
