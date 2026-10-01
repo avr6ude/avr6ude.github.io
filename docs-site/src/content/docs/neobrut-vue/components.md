@@ -3,7 +3,7 @@ title: Components
 description: Browse the components in Neobrut Vue core.
 ---
 
-These components are exported from `@neobrut-vue/core` 0.5.0. Import only what a view uses. The [live gallery](https://neobrut.avrdu.de/#gallery) lets you try their interactions.
+These components are exported from `@neobrut-vue/core` 0.5.0. Start with the interactive pages for [Button](/neobrut-vue/button/), [Input](/neobrut-vue/input/), [Select](/neobrut-vue/select/), [Switch](/neobrut-vue/switch/), [Accordion](/neobrut-vue/accordion/), [Tabs](/neobrut-vue/tabs/), [Dialog](/neobrut-vue/dialog/), and [Forms](/neobrut-vue/forms/). The [full gallery](https://neobrut.avrdu.de/#gallery) has the rest of the kit.
 
 | Purpose | Components |
 | --- | --- |

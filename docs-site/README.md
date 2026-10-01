@@ -2,6 +2,8 @@
 
 Shared documentation for my libraries. Each library has a top-level folder under `src/content/docs/` and a sidebar group in `astro.config.mjs`.
 
+Interactive examples use the published `@neobrut-vue/core` package in client-only Vue islands. Each example's Code tab displays its own `.vue` source file.
+
 ## Local development
 
 Use Node 24.14.1 or newer:

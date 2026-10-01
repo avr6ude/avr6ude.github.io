@@ -23,3 +23,5 @@ jobs:
         working-directory: docs-site
       - run: npm run build
         working-directory: docs-site
+      - run: npm test
+        working-directory: docs-site
