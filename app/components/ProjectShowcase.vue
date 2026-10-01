@@ -7,10 +7,9 @@ import { projects } from '~/utils/projects'
   <section class="projects-showcase page-section" aria-labelledby="projects-title">
     <div class="projects-showcase__heading">
       <h2 id="projects-title" class="section-title">projects.</h2>
-      <p>Things I made, shipped, or keep poking at.</p>
+      <p>Stuff I built, shipped, or keep poking at.</p>
     </div>
     <NbSeparator />
-
     <div class="project-list">
       <NbCard
         v-for="(project, index) in projects"
@@ -41,8 +40,9 @@ import { projects } from '~/utils/projects'
 </template>
 
 <style scoped>
-.projects-showcase__heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; }
-.projects-showcase__heading p { max-width: 30ch; margin: 0; line-height: 1.45; text-align: right; }
+.projects-showcase.page-section { padding: 2.5rem 0 5rem; }
+.projects-showcase__heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(18rem, 30rem); align-items: end; gap: 2rem; }
+.projects-showcase__heading p { width: 100%; max-width: none; margin: 0; line-height: 1.45; text-align: right; text-wrap: pretty; }
 .project-list { display: grid; gap: 2rem; padding-top: 2rem; }
 .project-card { max-width: 50rem; }
 .project-card--2, .project-card--5 { margin-left: 8%; }
@@ -57,7 +57,8 @@ import { projects } from '~/utils/projects'
 .project-card__links a:hover { text-decoration: underline; }
 
 @media (max-width: 700px) {
-  .projects-showcase__heading { align-items: start; flex-direction: column; gap: 0.75rem; }
+  .projects-showcase.page-section { padding: 2rem 0 2.75rem; }
+  .projects-showcase__heading { grid-template-columns: 1fr; gap: 0.75rem; }
   .projects-showcase__heading p { text-align: left; }
   .project-card--2, .project-card--3, .project-card--5, .project-card--6 { margin-left: 0; }
   .project-card h3 { font-size: clamp(1.9rem, 10vw, 3.2rem); }

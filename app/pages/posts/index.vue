@@ -14,7 +14,7 @@ const tilCount = computed(() => visiblePosts.value.filter((post) => post.til).le
 
 useSeoMeta({
   title: 'Writing — avrdu.de',
-  description: 'Writing and field notes by avrdu.',
+  description: 'My writing and field notes.',
 })
 </script>
 

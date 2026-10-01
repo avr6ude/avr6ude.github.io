@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Projects — avrdu.de',
-  description: 'Things avrdu has built or is building.',
+  description: 'Projects I built and maintain.',
 })
 </script>
 

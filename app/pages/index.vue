@@ -3,9 +3,9 @@ import { NbButton, NbSeparator } from '@neobrut-vue/core'
 
 useSeoMeta({
   title: 'avrdu.de — projects and writing',
-  description: 'Projects and writing by avrdu.',
+  description: 'My projects and writing.',
   ogTitle: 'avrdu.de — projects and writing',
-  ogDescription: 'Projects and writing by avrdu.',
+  ogDescription: 'My projects and writing.',
   ogImage: '/og.png',
 })
 </script>
