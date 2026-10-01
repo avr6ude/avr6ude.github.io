@@ -28,6 +28,8 @@
   background: #ffdf3f;
 }
 
+.nb-doc-example__tabs { display: flex; }
+
 .nb-doc-example__bar button {
   appearance: none;
   border: 0;

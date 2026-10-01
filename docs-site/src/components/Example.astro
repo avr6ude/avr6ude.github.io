@@ -11,9 +11,11 @@ const id = `example-${crypto.randomUUID()}`
 ---
 
 <div class="nb-doc-example" data-example>
-  <div class="nb-doc-example__bar" role="tablist" aria-label={`${title} example`}>
-    <button type="button" role="tab" id={`${id}-preview-tab`} aria-controls={`${id}-preview`} aria-selected="true" tabindex="0" data-view="preview">Preview</button>
-    <button type="button" role="tab" id={`${id}-code-tab`} aria-controls={`${id}-code`} aria-selected="false" tabindex="-1" data-view="code">Code</button>
+  <div class="nb-doc-example__bar">
+    <div class="nb-doc-example__tabs" role="tablist" aria-label={`${title} example`}>
+      <button type="button" role="tab" id={`${id}-preview-tab`} aria-controls={`${id}-preview`} aria-selected="true" tabindex="0" data-view="preview">Preview</button>
+      <button type="button" role="tab" id={`${id}-code-tab`} aria-controls={`${id}-code`} aria-selected="false" tabindex="-1" data-view="code">Code</button>
+    </div>
     <button type="button" class="nb-doc-example__copy" aria-label={`Copy ${title} code`} data-copy>Copy code</button>
   </div>
   <div class="nb-doc-example__preview" role="tabpanel" id={`${id}-preview`} aria-labelledby={`${id}-preview-tab`} data-panel="preview">
