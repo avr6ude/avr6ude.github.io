@@ -43,10 +43,9 @@ import { projects } from '~/utils/projects'
 .projects-showcase.page-section { padding: 2.5rem 0 5rem; }
 .projects-showcase__heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(18rem, 30rem); align-items: end; gap: 2rem; }
 .projects-showcase__heading p { width: 100%; max-width: none; margin: 0; line-height: 1.45; text-align: right; text-wrap: pretty; }
-.project-list { display: grid; gap: 2rem; padding-top: 2rem; }
-.project-card { max-width: 50rem; }
-.project-card--2, .project-card--5 { margin-left: 8%; }
-.project-card--3, .project-card--6 { margin-left: 16%; }
+.project-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; padding-top: 2rem; }
+.project-card { max-width: none; }
+.project-card--1 { grid-column: 1 / -1; }
 .project-card__header, .project-card__links { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 .project-card__number { font-family: var(--nb-font-mono); font-size: 0.8rem; font-weight: 800; }
 .project-card__tags { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0.4rem; }
@@ -60,7 +59,8 @@ import { projects } from '~/utils/projects'
   .projects-showcase.page-section { padding: 2rem 0 2.75rem; }
   .projects-showcase__heading { grid-template-columns: 1fr; gap: 0.75rem; }
   .projects-showcase__heading p { text-align: left; }
-  .project-card--2, .project-card--3, .project-card--5, .project-card--6 { margin-left: 0; }
+  .project-list { grid-template-columns: 1fr; gap: 1.25rem; }
+  .project-card--1 { grid-column: auto; }
   .project-card h3 { font-size: clamp(1.9rem, 10vw, 3.2rem); }
   .project-card p { margin-top: 1rem; font-size: 0.94rem; }
 }
