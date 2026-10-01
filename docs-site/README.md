@@ -16,7 +16,7 @@ Astro emits static files to `dist/`. There is no request-time SSR server.
 
 ## Cloudflare Pages
 
-Create a Pages project connected to `avr6ude/avrdu.de` with:
+Create a Pages project connected to `avr6ude/avr6ude.github.io` with:
 
 - Root directory: `docs-site`
 - Build command: `npm run build`
