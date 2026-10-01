@@ -20,3 +20,19 @@ test('the example tablist contains only tabs', () => {
   const copy = html.indexOf('data-copy', tabs)
   assert.ok(tabs >= 0 && tabsEnd > tabs && copy > tabsEnd)
 })
+
+test('the docs entry and catalog show live components, not a text-only list', () => {
+  const home = readFileSync(new URL('../dist/neobrut-vue/index.html', import.meta.url), 'utf8')
+  const catalog = readFileSync(new URL('../dist/neobrut-vue/components/index.html', import.meta.url), 'utf8')
+  assert.match(home, /<astro-island/)
+  assert.match(home, /data-example/)
+  assert.equal((catalog.match(/class="nb-doc-example" data-example/g) ?? []).length, 8)
+  assert.equal((catalog.match(/<astro-island/g) ?? []).length, 8)
+  assert.match(catalog, /ButtonDemo/)
+  assert.match(catalog, /FormDemo/)
+})
+
+test('copy stays with the code panel', () => {
+  const html = readFileSync(new URL('../dist/neobrut-vue/button/index.html', import.meta.url), 'utf8')
+  assert.match(html, /data-panel="code" hidden>\s*<button[^>]*data-copy/)
+})

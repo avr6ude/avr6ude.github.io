@@ -1,23 +1,54 @@
 :root {
-  --sl-color-accent-low: #fff2a5;
-  --sl-color-accent: #1b1b1b;
-  --sl-color-accent-high: #101010;
+  --sl-content-width: 49rem;
+  --sl-color-accent-low: #dce7ff;
+  --sl-color-accent: #326ae2;
+  --sl-color-accent-high: #151515;
+  --docs-rule: #151515;
 }
 
 :root[data-theme='dark'] {
-  --sl-color-accent-low: #4c3b00;
+  --sl-color-accent-low: #24345f;
   --sl-color-accent: #ffdf3f;
   --sl-color-accent-high: #fff8e7;
+  --docs-rule: #ffdf3f;
+}
+
+:root[data-theme='light'] {
+  --sl-color-bg: #dce7ff;
+  --sl-color-bg-nav: #fff;
+  --sl-color-bg-sidebar: #fff;
+  --sl-color-text: #151515;
+  --sl-color-text-accent: #151515;
+  --sl-color-hairline: #151515;
+}
+
+header.header { border-bottom: 3px solid var(--docs-rule); }
+.sidebar-pane { border-right: 3px solid var(--docs-rule); }
+.right-sidebar-container { border-left: 3px solid var(--docs-rule); }
+.site-title, main h1, main h2 { font-weight: 850; letter-spacing: -0.025em; }
+#starlight__sidebar [aria-current='page'] { background: #5e8ff4; color: #151515; font-weight: 850; }
+.sl-markdown-content a { text-underline-offset: .18em; }
+.sl-markdown-content a:focus-visible, #starlight__sidebar a:focus-visible { outline: 3px solid #e87b69; outline-offset: 2px; }
+.sl-markdown-content > h2 { border-top: 2px solid var(--docs-rule); padding-top: 1.4rem; }
+.sl-markdown-content > .nb-doc-example + h2 { margin-top: 3rem; }
+.sl-markdown-content > p { max-width: 70ch; }
+
+@media (max-width: 72rem) {
+  .right-sidebar-container { border-left: 0; }
+}
+
+@media (max-width: 50rem) {
+  .sidebar-pane { border-right: 0; }
 }
 
 .nb-doc-example {
   margin-block: 1.5rem 2rem;
   border: 3px solid #151515;
-  border-radius: 10px;
+  border-radius: 0;
   box-shadow: 6px 6px 0 #151515;
   overflow: hidden;
   color: #151515;
-  background: #fff8e7;
+  background: #fff;
 }
 
 .nb-doc-example__bar {
@@ -25,10 +56,10 @@
   align-items: stretch;
   gap: 0;
   border-bottom: 3px solid #151515;
-  background: #ffdf3f;
+  background: #fff;
 }
 
-.nb-doc-example__tabs { display: flex; }
+.nb-doc-example__tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; }
 
 .nb-doc-example__bar button {
   appearance: none;
@@ -38,25 +69,34 @@
   padding: .7rem 1rem;
   background: transparent;
   color: #151515;
-  font: 800 .84rem/1.2 ui-rounded, "Arial Rounded MT Bold", system-ui, sans-serif;
+  font: 800 .9rem/1.2 ui-rounded, "Arial Rounded MT Bold", system-ui, sans-serif;
   cursor: pointer;
 }
 
-.nb-doc-example__bar button[aria-selected="true"] { background: #fff8e7; }
-.nb-doc-example__bar button:hover:not([aria-selected="true"]) { background: #ffe875; }
+.nb-doc-example__bar button:last-child { border-right: 0; }
+.nb-doc-example__bar button[aria-selected="true"] { background: #5e8ff4; }
+.nb-doc-example__bar button:hover:not([aria-selected="true"]) { background: #dce7ff; }
 .nb-doc-example__bar button:focus-visible { outline: 3px solid #ff7b71; outline-offset: -3px; }
-.nb-doc-example__bar .nb-doc-example__copy { margin-left: auto; border-left: 2px solid #151515; border-right: 0; }
 
 .nb-doc-example__preview {
-  min-height: 180px;
+  display: grid;
+  place-items: center;
+  min-height: 230px;
   padding: clamp(1.25rem, 4vw, 2.5rem);
-  background: #fff8e7;
+  background-color: #fff;
+  background-image: linear-gradient(#15151522 1px, transparent 1px), linear-gradient(90deg, #15151522 1px, transparent 1px);
+  background-size: 32px 32px;
 }
 
-.nb-doc-example__preview > * { width: 100%; }
+.nb-doc-example__preview > * { width: min(100%, 38rem); }
+.nb-doc-example__preview .demo-row { justify-content: center; }
+.nb-doc-example__code { position: relative; }
+.nb-doc-example__copy { position: absolute; top: .75rem; right: .75rem; z-index: 1; border: 2px solid #fff8e7; padding: .4rem .7rem; background: #5e8ff4; box-shadow: 3px 3px 0 #fff8e7; color: #151515; font: 800 .8rem/1.2 ui-rounded, "Arial Rounded MT Bold", system-ui, sans-serif; cursor: pointer; }
+.nb-doc-example__copy:hover { background: #ffdf3f; }
+.nb-doc-example__copy:focus-visible { outline: 3px solid #ff7b71; outline-offset: 3px; }
 .nb-doc-example__code pre {
   margin: 0;
-  padding: 1.3rem;
+  padding: 3.5rem 1.3rem 1.3rem;
   overflow-x: auto;
   border: 0;
   border-radius: 0;
@@ -69,6 +109,6 @@
 .nb-doc-example [hidden] { display: none !important; }
 
 @media (max-width: 480px) {
-  .nb-doc-example__bar button { padding: .65rem .7rem; font-size: .75rem; }
+  .nb-doc-example__bar button { padding: .65rem .7rem; font-size: .8rem; }
   .nb-doc-example__preview { padding: 1rem; }
 }

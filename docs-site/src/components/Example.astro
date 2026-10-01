@@ -16,12 +16,12 @@ const id = `example-${crypto.randomUUID()}`
       <button type="button" role="tab" id={`${id}-preview-tab`} aria-controls={`${id}-preview`} aria-selected="true" tabindex="0" data-view="preview">Preview</button>
       <button type="button" role="tab" id={`${id}-code-tab`} aria-controls={`${id}-code`} aria-selected="false" tabindex="-1" data-view="code">Code</button>
     </div>
-    <button type="button" class="nb-doc-example__copy" aria-label={`Copy ${title} code`} data-copy>Copy code</button>
   </div>
   <div class="nb-doc-example__preview" role="tabpanel" id={`${id}-preview`} aria-labelledby={`${id}-preview-tab`} data-panel="preview">
     <slot />
   </div>
   <div class="nb-doc-example__code" role="tabpanel" id={`${id}-code`} aria-labelledby={`${id}-code-tab`} data-panel="code" hidden>
+    <button type="button" class="nb-doc-example__copy" aria-label={`Copy ${title} code`} data-copy>Copy</button>
     <pre><code>{source.trim()}</code></pre>
   </div>
 </div>
@@ -63,7 +63,7 @@ const id = `example-${crypto.randomUUID()}`
         copy.setAttribute('aria-label', `${copyLabel} failed`)
       }
       window.setTimeout(() => {
-        copy.textContent = 'Copy code'
+        copy.textContent = 'Copy'
         copy.setAttribute('aria-label', copyLabel)
       }, 2000)
     })
