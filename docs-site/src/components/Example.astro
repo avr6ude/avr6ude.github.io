@@ -1,5 +1,6 @@
 ---
 import '@neobrut-vue/core/style.css'
+import { Code } from 'astro:components'
 
 interface Props {
   source: string
@@ -10,7 +11,7 @@ const { source, title } = Astro.props
 const id = `example-${crypto.randomUUID()}`
 ---
 
-<div class="nb-doc-example" data-example>
+<div class="nb-doc-example not-content" data-example>
   <div class="nb-doc-example__bar">
     <div class="nb-doc-example__tabs" role="tablist" aria-label={`${title} example`}>
       <button type="button" role="tab" id={`${id}-preview-tab`} aria-controls={`${id}-preview`} aria-selected="true" tabindex="0" data-view="preview">Preview</button>
@@ -22,7 +23,7 @@ const id = `example-${crypto.randomUUID()}`
   </div>
   <div class="nb-doc-example__code" role="tabpanel" id={`${id}-code`} aria-labelledby={`${id}-code-tab`} data-panel="code" hidden>
     <button type="button" class="nb-doc-example__copy" aria-label={`Copy ${title} code`} data-copy>Copy</button>
-    <pre><code>{source.trim()}</code></pre>
+    <Code code={source.trim()} lang="vue" embeddedLangs={['typescript', 'css']} theme="github-dark" />
   </div>
 </div>
 
