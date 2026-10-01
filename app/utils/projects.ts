@@ -4,7 +4,8 @@ export interface Project {
   tags: string[]
   url: string
   source?: string
-  tone: 'primary' | 'secondary' | 'ink'
+  color: 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'danger' | 'muted'
+  featured?: boolean
 }
 
 export const projects: Project[] = [
@@ -13,7 +14,8 @@ export const projects: Project[] = [
     description: 'I built wishlistful to make and share wishlists for birthdays, new homes, or any occasion.',
     tags: ['wishlist', 'sharing', 'web app'],
     url: 'https://wishlistful.avrdu.de',
-    tone: 'primary',
+    color: 'primary',
+    featured: true,
   },
   {
     name: 'Game of Slop',
@@ -21,7 +23,7 @@ export const projects: Project[] = [
     tags: ['game', 'cellular automata', 'ai', 'react'],
     url: 'https://slop.avrdu.de',
     source: 'https://github.com/avr6ude/gameofslop',
-    tone: 'secondary',
+    color: 'secondary',
   },
   {
     name: 'casky',
@@ -29,28 +31,28 @@ export const projects: Project[] = [
     tags: ['macos', 'homebrew', 'app setup', 'react'],
     url: 'https://casky.app',
     source: 'https://github.com/avr6ude/casky',
-    tone: 'ink',
+    color: 'info',
   },
   {
     name: 'stop using SSR',
     description: 'I built stopusingssr.com as a static-site manifesto arguing that most public apps do not need SSR.',
     tags: ['static sites', 'ssr', 'web architecture'],
     url: 'https://stopusingssr.com',
-    tone: 'primary',
+    color: 'accent',
   },
   {
     name: 'simmer',
     description: 'I built simmer as a recipe box that works offline, scales ingredients, converts units, and builds grocery lists.',
     tags: ['recipes', 'offline', 'meal planning', 'grocery lists'],
     url: 'https://simmer.avrdu.de',
-    tone: 'secondary',
+    color: 'success',
   },
   {
     name: '@neobrut-vue/core',
     description: 'I built @neobrut-vue/core as colorful, accessible neo-brutalist components for Vue 3.',
     tags: ['vue 3', 'components', 'accessibility', 'npm'],
     url: 'https://www.npmjs.com/package/@neobrut-vue/core',
-    tone: 'ink',
+    color: 'danger',
   },
   {
     name: 'avrdu.de',
@@ -58,6 +60,6 @@ export const projects: Project[] = [
     tags: ['nuxt', 'markdown', 'static site', 'cloudflare pages'],
     url: 'https://avrdu.de',
     source: 'https://github.com/avr6ude/avrdu.de',
-    tone: 'primary',
+    color: 'muted',
   },
 ]
