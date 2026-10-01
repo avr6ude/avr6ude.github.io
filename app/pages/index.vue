@@ -35,11 +35,11 @@ useSeoMeta({
 }
 .hero.page-section { padding: 3rem 0 2.5rem; }
 .hero .display-title { max-width: 11ch; font-size: clamp(2.75rem, 7vw, 5.5rem); }
-.hero__lede { align-self: center; max-width: 30ch; margin: 0; font-size: 1.05rem; line-height: 1.55; }
+.hero__lede { align-self: center; width: 100%; max-width: 30ch; justify-self: end; margin: 0; font-size: 1.05rem; line-height: 1.55; text-align: right; text-wrap: balance; }
 
 @media (max-width: 800px) {
   .hero { grid-template-columns: 1fr; gap: 1.25rem; }
-  .hero__lede { max-width: 42ch; }
+  .hero__lede { max-width: 42ch; justify-self: start; text-align: left; }
 }
 @media (max-width: 560px) {
   .hero.page-section { padding: 1.75rem 0 1.5rem; }
