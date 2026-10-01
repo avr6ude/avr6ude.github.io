@@ -51,7 +51,8 @@ export const projects: Project[] = [
     name: '@neobrut-vue/core',
     description: 'I built @neobrut-vue/core as colorful, accessible neo-brutalist components for Vue 3.',
     tags: ['vue 3', 'components', 'accessibility', 'npm'],
-    url: 'https://www.npmjs.com/package/@neobrut-vue/core',
+    url: 'https://neobrut.avrdu.de',
+    source: 'https://github.com/avr6ude/neobrut-vue',
     color: 'danger',
   },
   {
