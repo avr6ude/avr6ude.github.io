@@ -30,20 +30,20 @@ useSeoMeta({
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(14rem, 24rem);
-  gap: clamp(2rem, 7vw, 6rem);
+  gap: clamp(var(--site-space-8), 7vw, var(--site-space-12));
   align-items: end;
 }
-.hero.page-section { padding: 3rem 0 2.5rem; }
-.hero .display-title { max-width: 11ch; font-size: clamp(2.75rem, 7vw, 5.5rem); }
-.hero__lede { align-self: center; width: 100%; max-width: 30ch; justify-self: end; margin: 0; font-size: 1.05rem; line-height: 1.55; text-align: right; text-wrap: balance; }
+.hero.page-section { padding: var(--site-space-12) 0 var(--site-space-10); }
+.hero .display-title { max-width: 11ch; font-size: var(--site-size-hero); }
+.hero__lede { align-self: center; width: 100%; max-width: 30ch; justify-self: end; margin: 0; font-size: var(--site-font-body-lg); line-height: var(--site-leading-readable); text-align: right; text-wrap: balance; }
 
 @media (max-width: 800px) {
-  .hero { grid-template-columns: 1fr; gap: 1.25rem; }
+  .hero { grid-template-columns: 1fr; gap: var(--site-space-5); }
   .hero__lede { max-width: 42ch; justify-self: start; text-align: left; }
 }
 @media (max-width: 560px) {
-  .hero.page-section { padding: 1.75rem 0 1.5rem; }
-  .hero .display-title { font-size: clamp(2.35rem, 13vw, 4rem); }
-  .hero__lede { font-size: 0.96rem; line-height: 1.5; }
+  .hero.page-section { padding: var(--site-space-7) 0 var(--site-space-6); }
+  .hero .display-title { font-size: var(--site-size-hero-mobile); }
+  .hero__lede { font-size: var(--site-font-body); line-height: var(--site-leading-body); }
 }
 </style>

@@ -37,14 +37,14 @@ useSeoMeta({
 </template>
 
 <style scoped>
-.simple-page { max-width: 64rem; margin: 0 auto; }
-.simple-page__lede { max-width: 40ch; margin: 2rem 0 3rem; font-size: 1.35rem; line-height: 1.45; }
-.about-grid { display: grid; grid-template-columns: minmax(0, 1fr) 18rem; gap: 4rem; align-items: start; }
+.simple-page { max-width: var(--site-size-content); margin: 0 auto; }
+.simple-page__lede { max-width: 40ch; margin: var(--site-space-8) 0 var(--site-space-12); font-size: var(--site-font-about); line-height: var(--site-leading-copy); }
+.about-grid { display: grid; grid-template-columns: minmax(0, 1fr) var(--site-size-sidebar); gap: var(--site-space-16); align-items: start; }
 .about-card { transform: rotate(-2deg); }
-.about-card p { line-height: 1.5; }
-.about-card__mono { font-family: var(--nb-font-mono); font-size: 0.75rem; font-weight: 700; }
-.article-copy h2 { margin-top: 3rem; }
-.article-copy ul { padding-left: 1.2rem; }
-@media (max-width: 760px) { .about-grid { grid-template-columns: 1fr; gap: 2rem; } .about-card { max-width: 22rem; margin-left: auto; } }
-@media (max-width: 700px) { .simple-page__lede { margin: 1.25rem 0 2rem; font-size: 1.05rem; } }
+.about-card p { line-height: var(--site-leading-body); }
+.about-card__mono { font-family: var(--nb-font-mono); font-size: var(--site-font-meta); font-weight: var(--site-weight-strong); }
+.article-copy h2 { margin-top: var(--site-space-12); }
+.article-copy ul { padding-left: var(--site-space-5); }
+@media (max-width: 760px) { .about-grid { grid-template-columns: 1fr; gap: var(--site-space-8); } .about-card { max-width: var(--site-size-card-narrow); margin-left: auto; } }
+@media (max-width: 700px) { .simple-page__lede { margin: var(--site-space-5) 0 var(--site-space-8); font-size: var(--site-font-body-lg); } }
 </style>

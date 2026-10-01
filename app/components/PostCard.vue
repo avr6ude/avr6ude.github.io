@@ -48,15 +48,15 @@ defineProps<{
 }
 
 .post-card:hover {
-  transform: translate(3px, 3px);
-  box-shadow: 3px 3px 0 var(--nb-color-ink);
+  transform: translate(var(--site-space-1), var(--site-space-1));
+  box-shadow: var(--site-shadow-small);
 }
 
 .post-card__topline {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 1rem;
+  gap: var(--site-space-4);
 }
 
 .post-card__tags {
@@ -67,9 +67,9 @@ defineProps<{
   overflow: hidden;
   color: color-mix(in srgb, var(--nb-color-ink) 74%, var(--nb-color-paper));
   font-family: var(--nb-font-mono);
-  font-size: 0.7rem;
-  font-weight: 800;
-  line-height: 1.35;
+  font-size: var(--site-font-small);
+  font-weight: var(--site-weight-bold);
+  line-height: var(--site-leading-meta);
   text-align: left;
   white-space: nowrap;
 }
@@ -92,23 +92,23 @@ defineProps<{
 .post-card h3 {
   margin: 0;
   font-family: var(--nb-font-display);
-  font-size: clamp(1.6rem, 3vw, 2.3rem);
-  line-height: 0.95;
-  letter-spacing: -0.04em;
+  font-size: var(--site-size-card);
+  line-height: var(--site-leading-tight);
+  letter-spacing: var(--site-tracking-card);
 }
 
 .post-card p {
   max-width: none;
-  margin: 1rem 0 1.5rem;
+  margin: var(--site-space-4) 0 var(--site-space-6);
   color: color-mix(in srgb, var(--nb-color-ink) 74%, var(--nb-color-paper));
-  line-height: 1.55;
+  line-height: var(--site-leading-readable);
 }
 
 .post-card__footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: var(--site-space-4);
 }
 
 .post-card__footer :deep(.nb-button) {
@@ -117,8 +117,8 @@ defineProps<{
 }
 
 @media (max-width: 700px) {
-  .post-card h3 { font-size: clamp(1.3rem, 7vw, 1.8rem); }
-  .post-card p { margin: 0.75rem 0 1rem; font-size: 0.92rem; line-height: 1.45; }
-  .post-card__tags { font-size: 0.66rem; }
+  .post-card h3 { font-size: var(--site-size-card-mobile); }
+  .post-card p { margin: var(--site-space-3) 0 var(--site-space-4); font-size: var(--site-font-body-sm); line-height: var(--site-leading-copy); }
+  .post-card__tags { font-size: var(--site-font-compact); }
 }
 </style>

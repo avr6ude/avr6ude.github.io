@@ -55,19 +55,19 @@ useHead(() => ({
 
 <style scoped>
 .post { max-width: var(--reading-width); margin: 0 auto; }
-.post__header { padding: 1.5rem 0 3.5rem; }
-.post__back { display: inline-block; margin-bottom: 3rem; font-family: var(--nb-font-mono); font-size: 0.8rem; font-weight: 800; }
-.post__kicker { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1.25rem; font-family: var(--nb-font-mono); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; }
-.post h1 { max-width: 16ch; margin: 0 0 1.5rem; font-family: var(--nb-font-display); font-size: clamp(3rem, 8vw, 6rem); line-height: 0.88; letter-spacing: -0.075em; }
-.post__excerpt { max-width: 55ch; margin: 1.5rem 0 0; font-size: 1.18rem; line-height: 1.55; }
-.article-copy { padding-top: 3rem; }
+.post__header { padding: var(--site-space-6) 0 var(--site-space-14); }
+.post__back { display: inline-block; margin-bottom: var(--site-space-12); font-family: var(--nb-font-mono); font-size: var(--site-font-control); font-weight: var(--site-weight-bold); }
+.post__kicker { display: flex; align-items: center; gap: var(--site-space-3); margin-bottom: var(--site-space-5); font-family: var(--nb-font-mono); font-size: var(--site-font-meta); font-weight: var(--site-weight-bold); text-transform: uppercase; }
+.post h1 { max-width: 16ch; margin: 0 0 var(--site-space-6); font-family: var(--nb-font-display); font-size: var(--site-size-post-title); line-height: var(--site-leading-heading); letter-spacing: var(--site-tracking-display); }
+.post__excerpt { max-width: 55ch; margin: var(--site-space-6) 0 0; font-size: var(--site-font-lede); line-height: var(--site-leading-readable); }
+.article-copy { padding-top: var(--site-space-12); }
 
 @media (max-width: 700px) {
-  .post__header { padding: 0.75rem 0 2.25rem; }
-  .post__back { margin-bottom: 2rem; font-size: 0.72rem; }
-  .post__kicker { margin-bottom: 0.9rem; font-size: 0.68rem; }
-  .post h1 { font-size: clamp(2.35rem, 13vw, 4.5rem); }
-  .post__excerpt { margin-top: 1rem; font-size: 1rem; line-height: 1.5; }
-  .article-copy { padding-top: 2rem; }
+  .post__header { padding: var(--site-space-3) 0 var(--site-space-9); }
+  .post__back { margin-bottom: var(--site-space-8); font-size: var(--site-font-label); }
+  .post__kicker { margin-bottom: var(--site-space-3); font-size: var(--site-font-label); }
+  .post h1 { font-size: var(--site-size-post-title-mobile); }
+  .post__excerpt { margin-top: var(--site-space-4); font-size: var(--site-font-body-md); line-height: var(--site-leading-body); }
+  .article-copy { padding-top: var(--site-space-8); }
 }
 </style>

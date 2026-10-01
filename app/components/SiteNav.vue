@@ -23,8 +23,8 @@ import { NuxtLink } from '#components'
 
 <style scoped>
 .site-nav {
-  padding: 1.25rem 0;
-  border-bottom: var(--nb-border-width) solid var(--nb-color-ink);
+  padding: var(--site-space-5) 0;
+  border-bottom: var(--site-border);
   background: var(--nb-color-primary);
 }
 
@@ -32,39 +32,39 @@ import { NuxtLink } from '#components'
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  width: min(100% - 2rem, var(--page-width));
+  gap: var(--site-space-4);
+  width: min(100% - (2 * var(--site-gutter)), var(--page-width));
   margin: 0 auto;
 }
 
 .site-nav__brand,
 .site-nav__links a {
   font-family: var(--nb-font-mono);
-  font-weight: 800;
+  font-weight: var(--site-weight-bold);
   text-decoration: none;
 }
 
 .site-nav__brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
-  font-size: 1.05rem;
+  gap: var(--site-space-2);
+  font-size: var(--site-font-body-lg);
 }
 
 .site-nav__mark {
   display: grid;
-  width: 2rem;
-  height: 1.8rem;
+  width: var(--site-size-mark-width);
+  height: var(--site-size-mark-height);
   place-items: center;
-  border: 2px solid var(--nb-color-ink);
-  border-radius: var(--nb-radius-sm);
+  border: var(--site-border-thin);
+  border-radius: var(--site-radius-small);
   background: var(--nb-color-accent);
-  box-shadow: 3px 3px 0 var(--nb-color-ink);
+  box-shadow: var(--site-shadow-small);
   font-family: var(--nb-font-display);
-  font-size: 1.05rem;
-  font-weight: 800;
-  letter-spacing: -0.12em;
-  line-height: 1;
+  font-size: var(--site-font-body-lg);
+  font-weight: var(--site-weight-bold);
+  letter-spacing: var(--site-tracking-tight);
+  line-height: var(--site-leading-single);
   transform: rotate(-4deg);
 }
 
@@ -72,12 +72,12 @@ import { NuxtLink } from '#components'
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 0.7rem 1.1rem;
+  gap: var(--site-space-3) var(--site-space-5);
 }
 
 .site-nav__links a {
-  padding: 0.2rem 0.35rem;
-  border-bottom: 2px solid transparent;
+  padding: var(--site-space-1) var(--site-space-2);
+  border-bottom: var(--site-border-transparent);
 }
 
 .site-nav__links a:hover,
@@ -86,11 +86,11 @@ import { NuxtLink } from '#components'
 }
 
 @media (max-width: 560px) {
-  .site-nav { padding: 0.8rem 0; }
-  .site-nav__inner { align-items: center; flex-direction: row; gap: 0.6rem; }
-  .site-nav__brand { font-size: 0.86rem; }
-  .site-nav__mark { width: 1.7rem; height: 1.5rem; font-size: 0.9rem; }
-  .site-nav__links { justify-content: flex-end; gap: 0.25rem; }
-  .site-nav__links a { padding: 0.15rem 0.2rem; font-size: 0.68rem; }
+  .site-nav { padding: var(--site-space-3) 0; }
+  .site-nav__inner { align-items: center; flex-direction: row; gap: var(--site-space-2); }
+  .site-nav__brand { font-size: var(--site-font-body-sm); }
+  .site-nav__mark { width: var(--site-size-mark-width-mobile); height: var(--site-size-mark-height-mobile); font-size: var(--site-font-body-md); }
+  .site-nav__links { justify-content: flex-end; gap: var(--site-space-1); }
+  .site-nav__links a { padding: var(--site-space-1) var(--site-space-1); font-size: var(--site-font-label); }
 }
 </style>

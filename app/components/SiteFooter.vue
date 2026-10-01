@@ -13,25 +13,25 @@ import { NbLink } from '@neobrut-vue/core'
 
 <style scoped>
 .site-footer {
-  margin-top: 5rem;
-  padding: 2rem 0;
-  border-top: var(--nb-border-width) solid var(--nb-color-ink);
+  margin-top: var(--site-space-20);
+  padding: var(--site-space-8) 0;
+  border-top: var(--site-border);
   background: var(--nb-color-secondary);
 }
 
 .site-footer__inner {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
-  width: min(100% - 2rem, var(--page-width));
+  gap: var(--site-space-4);
+  width: min(100% - (2 * var(--site-gutter)), var(--page-width));
   margin: 0 auto;
   font-family: var(--nb-font-mono);
-  font-size: 0.78rem;
-  font-weight: 700;
+  font-size: var(--site-font-caption);
+  font-weight: var(--site-weight-strong);
 }
 
 .site-footer p { margin: 0; }
-.site-footer a { font-weight: 800; }
+.site-footer a { font-weight: var(--site-weight-bold); }
 
 @media (max-width: 560px) {
   .site-footer__inner { flex-direction: column; }

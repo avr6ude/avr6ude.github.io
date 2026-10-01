@@ -33,11 +33,11 @@ const tagLinks = computed(() => toTagLinks(props.tags))
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.45rem 0.65rem;
+  gap: var(--site-space-2) var(--site-space-3);
   color: color-mix(in srgb, var(--nb-color-ink) 68%, var(--nb-color-paper));
   font-family: var(--nb-font-mono);
-  font-size: 0.75rem;
-  font-weight: 700;
+  font-size: var(--site-font-meta);
+  font-weight: var(--site-weight-strong);
 }
 
 .post-meta__tag { color: var(--nb-color-ink); }
