@@ -34,7 +34,7 @@ function contentText(node: unknown): string {
 }
 
 export function tagHref(tag: string): string {
-  return `/?tag=${encodeURIComponent(tag)}#writing`
+  return `/posts/?tag=${encodeURIComponent(tag)}#writing`
 }
 
 export function toTagLinks(tags: string[]): Array<{ label: string; href: string }> {

@@ -14,7 +14,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@neobrut-vue/core": "^0.2.0",
+    "@neobrut-vue/core": "^0.4.0",
     "@nuxt/content": "^3.16.0",
     "better-sqlite3": "^12.5.0",
     "gray-matter": "^4.0.3",

@@ -12,8 +12,8 @@ import { NuxtLink } from '#components'
       </NbLink>
 
       <nav class="site-nav__links" aria-label="Main navigation">
-        <NbLink :as="NuxtLink" to="/#writing" tone="ink">writing</NbLink>
-        <NbLink :as="NuxtLink" to="/projects/" tone="ink">projects</NbLink>
+        <NbLink :as="NuxtLink" to="/" tone="ink">projects</NbLink>
+        <NbLink :as="NuxtLink" to="/posts/" tone="ink">writing</NbLink>
         <NbLink :as="NuxtLink" to="/about/" tone="ink">about</NbLink>
         <NbLink href="/rss.xml" tone="ink">rss</NbLink>
       </nav>

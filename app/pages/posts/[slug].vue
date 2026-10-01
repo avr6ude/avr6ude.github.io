@@ -35,7 +35,7 @@ useHead(() => ({
 <template>
   <article v-if="post" class="post page-section">
     <header class="post__header">
-      <NuxtLink class="post__back" to="/#writing">← back to the archive</NuxtLink>
+      <NuxtLink class="post__back" to="/posts/#writing">← back to the archive</NuxtLink>
       <div class="post__kicker">
         <NbBadge v-if="post.til" tone="accent" size="sm">TIL</NbBadge>
         <span>field note / {{ post.tags[0] }}</span>

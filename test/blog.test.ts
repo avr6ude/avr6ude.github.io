@@ -24,13 +24,13 @@ describe('blog helpers', () => {
   })
 
   it('builds a writing filter link for a tag', () => {
-    expect(tagHref('cloudflare')).toBe('/?tag=cloudflare#writing')
+    expect(tagHref('cloudflare')).toBe('/posts/?tag=cloudflare#writing')
   })
 
   it('maps post tags to clickable filter links', () => {
     expect(toTagLinks(['security', 'cloudflare'])).toEqual([
-      { label: '#security', href: '/?tag=security#writing' },
-      { label: '#cloudflare', href: '/?tag=cloudflare#writing' },
+      { label: '#security', href: '/posts/?tag=security#writing' },
+      { label: '#cloudflare', href: '/posts/?tag=cloudflare#writing' },
     ])
   })
 })
