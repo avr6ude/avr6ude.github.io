@@ -7,8 +7,8 @@ export default defineConfig({
   vite: { resolve: { tsconfigPaths: false } },
   integrations: [
     starlight({
-      title: 'avrdu docs',
-      description: 'Documentation for projects by avrdude.',
+      title: 'Docs',
+      description: 'Guides for open-source libraries.',
       sidebar: [
         { label: 'Home', link: '/' },
         {

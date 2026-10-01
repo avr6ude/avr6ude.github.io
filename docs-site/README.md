@@ -1,6 +1,6 @@
-# avrdu docs
+# Docs
 
-Shared documentation for libraries by avrdude. Each library owns a top-level folder under `src/content/docs/` and a sidebar group in `astro.config.mjs`.
+Shared documentation for my libraries. Each library has a top-level folder under `src/content/docs/` and a sidebar group in `astro.config.mjs`.
 
 ## Local development
 

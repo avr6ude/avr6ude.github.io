@@ -1,9 +1,9 @@
 ---
-title: Documentation
-description: Guides for open-source projects by avrdude.
+title: Docs
+description: Guides for my open-source libraries.
 ---
 
-Guides and references for open-source libraries by avrdude. Each library has its own section, so new projects can join without moving existing guides.
+Guides and references for the libraries I build. Each one has its own section.
 
 ## Libraries
 
