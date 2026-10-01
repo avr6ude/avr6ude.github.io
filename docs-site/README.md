@@ -1,6 +1,6 @@
 # Docs
 
-Shared documentation for my libraries. Each library has a top-level folder under `src/content/docs/` and a sidebar group in `astro.config.mjs`.
+Shared documentation for my libraries. Neobrut Vue now lives at [neobrut.avrdu.de/docs](https://neobrut.avrdu.de/docs/); its old URLs redirect there.
 
 Interactive examples use the published `@neobrut-vue/core` package in client-only Vue islands. Each example's Code tab displays its own `.vue` source file.
 
@@ -26,4 +26,4 @@ Create a Pages project connected to `avr6ude/avr6ude.github.io` with:
 - Environment variable: `NODE_VERSION=24.14.1`
 - Custom domain: `docs.avrdu.de`
 
-Attach the custom domain in Pages before changing DNS; a DNS record alone will not provision the Pages route and certificate. Verify `https://docs.avrdu.de/` and `https://docs.avrdu.de/neobrut-vue/` after deployment.
+Attach the custom domain in Pages before changing DNS; a DNS record alone will not provision the Pages route and certificate. Verify `https://docs.avrdu.de/` and the Neobrut redirect after deployment.
